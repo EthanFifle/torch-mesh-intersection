@@ -1,6 +1,7 @@
 # Detecting & Penalizing Mesh Intersections
 
 This package provides a PyTorch module that can efficiently (1) detect and (2) penalize (self-)intersections for a triangular mesh. 
+Tried and tested (April 2023) with Python 3.8, CUDA 11.7, CuDNN 8.4 and PyTorch 2.0.
 
 ## Table of Contents
   * [License](#license)
@@ -75,17 +76,25 @@ and cuDNN v8.4.0 (April 1st, 2022) for CUDA 11.x.
 Cuda samples, math headers and bvh_ops are already included in the repo. These resources where gathered from here: [samples](https://github.com/NVIDIA/cuda-samples.git), 
 [headers](https://github.com/NVIDIA/cuda-samples/blob/master/Common/helper_math.h), [operations](https://gist.github.com/conorcodes/612f3358f0c2569f26e07c5fd86345fe). 
 
-**1. Clone this repository**
+**1. Set up dependency**
+
+Navigate to the directory of the project which requires this dependency. (In my case this was [smplify-x](https://github.com/vchoutas/smplify-x))
+
+**2. Clone this repository**
 ```Shell
 git clone https://github.com/vchoutas/torch-mesh-isect
 cd torch-mesh-interection
 pip install -r requirements.txt
 ```
 
-**2. Clone this repository**
+**3. Run the setup**
 ```Shell
-git clone https://github.com/vchoutas/torch-mesh-isect
-cd torch-mesh-interection
+# This will run the build as normal
+python setup.py install
+
+OR
+# This will build a windows .whl dist file
+python setup.py install bdist_wheel
 ```
 
 ## Dependencies
